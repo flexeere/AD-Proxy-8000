@@ -28,7 +28,10 @@ if [ $SOK_OS == "ERROR" ]; then
     exit 1;
 fi
 
-if [ $SOK_OS == "ubuntu2204" ]; then
+if [ $SOK_OS == "ubuntu2404" ]; then
+    /usr/bin/apt -y remove --purge squid squid-common squid-langpack
+    rm -rf /etc/squid/
+elif [ $SOK_OS == "ubuntu2204" ]; then
     /usr/bin/apt -y remove --purge squid squid-common squid-langpack
     rm -rf /etc/squid/
 elif [ $SOK_OS == "ubuntu2004" ]; then
